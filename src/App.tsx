@@ -8,14 +8,6 @@ function App() {
       <header className="App-header">
         <img src="carmine.png" className="App-logo" alt="logo" />
         <p>THIS IS DANIELLAS WEBSITE.</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
