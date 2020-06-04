@@ -17,7 +17,21 @@ function App() {
         aspectRatio={1}
         borderRadius={0}
         lightOpacity={0}
-        style={{ width: "80%" }}
+        style={{ width: 400 }}
+      />
+      <LayeredImage
+        layers={layers}
+        aspectRatio={1}
+        borderRadius={0}
+        lightOpacity={0}
+        style={{ width: 400 }}
+      />
+      <LayeredImage
+        layers={layers}
+        aspectRatio={1}
+        borderRadius={0}
+        lightOpacity={0}
+        style={{ width: 400 }}
       />
     </div>
   );
