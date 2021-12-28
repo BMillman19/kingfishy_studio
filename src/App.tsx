@@ -8,7 +8,7 @@ import { background, body, eyes, mouth, head, hands } from './layersDB';
 import Categories from './Categories';
 import MemberDetails from './MemberDetails';
 import * as queryString from 'query-string';
-// import sha1 from 'sha1';
+import sha1 from 'sha1';
 // const fs = require('fs');
 
 
@@ -18,13 +18,22 @@ import * as queryString from 'query-string';
 //   "carmine_action.png",
 // ];
 
+// const priceList = {
+//   "None": 0.00,
+//   "common": 0.01, 
+//   "rare": 0.02, 
+//   "epic": 0.03, 
+//   "legendary": 0.04, 
+//   "mythic": 0.05,
+// }
+
 const priceList = {
   "None": 0.00,
-  "common": 0.01, 
-  "rare": 0.02, 
-  "epic": 0.03, 
-  "legendary": 0.04, 
-  "mythic": 0.05,
+  "common": 0.02, 
+  "rare": 0.04, 
+  "epic": 0.06, 
+  "legendary": 0.08, 
+  "mythic": 0.10,
 }
 
 // const floatContainer: CSS.Properties = {
@@ -34,7 +43,8 @@ const priceList = {
 const flexCenter: CSS.Properties = {
   display: 'flex',
   justifyContent: 'start',
-  gap: '10px 30px'
+  gap: '10px 30px',
+  flexWrap: 'wrap',
 };
 
 export default class App extends Component {
@@ -241,8 +251,15 @@ export default class App extends Component {
     return resp;
   };
 
+  createDna = () => {
+    let arr = this.getUpdateLayers();
+    let text = arr.join("-");
+    return sha1(text);
+  };
+
   getGoogleFormData = () => {
       let googleData = {
+          "entry.441815694": this.createDna(),
           "entry.1346210675": this.state.information.itemId,
           "entry.54977837": this.state.information.discordId,
           "entry.1929991873": this.state.information.solanaWallet, 
@@ -281,18 +298,13 @@ export default class App extends Component {
   //     fs.writeFileSync('allDnaList.txt', text);
   // };
 
-  // createDna = () => {
-  //   let arr = this.getUpdateLayers();
-  //   let text = arr.join("-");
-  //   return sha1(text);
-  // }
-
   // validateSubmitForm = () => {
   //   let existingDna = this.getExistingDnaList();
   //   console.log(`existingDna = ${existingDna}`);
   // }
 
   handleGoogleFormSubmit = (e: { preventDefault: () => void; }) => {
+
 
     const id = "1FAIpQLScpjEcjktqcGbiq1YlLXcFkJMQZqqqoAv394D4KF86A924RBw" //YOUR FORM ID
     e.preventDefault()
@@ -326,37 +338,30 @@ export default class App extends Component {
                     generateRandomArtFromSelections={this.generateRandomArtFromSelections}
                     estimatedMintPrice={this.state.estimatedMintPrice}
                 />
-            </div>
-            <div>
-                <div>
-                    <LayeredImage 
+                <br/>
+                <br/>
+                <LayeredImage 
                         aspectRatio={1600/1600}
                         layers={this.getUpdateLayers()} 
-                        style={{ width: 256 }} 
-                    />
-                </div>
-                <div>
-                    <br/>
-                </div>
-                <div>
-                    <button>
-                        Estimated Mint Price: {this.state.estimatedMintPrice} SOL
-                    </button>
-                </div>
+                        style={{ width: 328 }} 
+                />
+            </div>
+            <div>
+                <MemberDetails
+                    itemId={this.state.information.itemId}
+                    handleItemIdChange={this.handleItemIdChange}
+                    handleDiscordChange={this.handleDiscordChange}
+                    handleSolanaWalletChange={this.handleSolanaWalletChange}
+                    handleTwitterChange={this.handleTwitterChange}
+                    handleAdditionalNotesChange={this.handleAdditionalNotesChange}
+                    handleGoogleFormSubmit={this.handleGoogleFormSubmit}
+                />
+                <br/>
+                <h1 style={{width:'328px'}}>Have Fun!</h1>
             </div>
         </div>
-        
-        <div>
-            <MemberDetails
-                itemId={this.state.information.itemId}
-                handleItemIdChange={this.handleItemIdChange}
-                handleDiscordChange={this.handleDiscordChange}
-                handleSolanaWalletChange={this.handleSolanaWalletChange}
-                handleTwitterChange={this.handleTwitterChange}
-                handleAdditionalNotesChange={this.handleAdditionalNotesChange}
-                handleGoogleFormSubmit={this.handleGoogleFormSubmit}
-            />
-        </div>
+        <br/>
+        <br/>
     </div>
     );
   }

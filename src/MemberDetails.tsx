@@ -30,7 +30,7 @@ export default function MemberDetails(props: { itemId: any; handleItemIdChange: 
         display: 'flex',
         justifyContent: 'left', 
         alignItems: 'start',
-        width: '350px'
+        width: '328px'
     };
 
     const itemIdChange = (e: any) => {
@@ -75,6 +75,12 @@ export default function MemberDetails(props: { itemId: any; handleItemIdChange: 
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
+                {/* <div onChange={itemIdChange} style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <div><button>Select your entry: </button></div>
+                    <div><input type="radio" value="1" name="1" checked={itemId === "1"}/> 1 </div>
+                    <div><input type="radio" value="2" name="2" checked={itemId === "2"}/> 2 </div>
+                    <div><input type="radio" value="3" name="3" checked={itemId === "3"}/> 3 </div>
+                </div> */}
             </div>
             <div style={floatChild}>
                 <form onSubmit={googleFormSubmit}>

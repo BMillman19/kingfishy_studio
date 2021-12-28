@@ -90,7 +90,7 @@ const head = {
     "epic": [
         "https://nosienumsempire.s3.amazonaws.com/art/Head/Antlers%23100.png",
         "https://nosienumsempire.s3.amazonaws.com/art/Head/Crown%23100.png",
-        "https://nosienumsempire.s3.amazonaws.com/art/Head/Skeleton%23100.png",
+        // "https://nosienumsempire.s3.amazonaws.com/art/Head/Skeleton%23100.png",
     ],
 };
 

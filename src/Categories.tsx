@@ -11,7 +11,8 @@ export default function Categories(props: { background: any; body: any; eyes: an
     const floatChild: CSS.Properties = {
         display: 'flex',
         justifyContent: 'space-between', 
-        alignItems: 'start',
+        alignItems: 'start', 
+        width: '328px'
     };
 
     // let initialBackground = "common";
@@ -57,9 +58,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={background} onChange={backGroundChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -72,9 +73,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={body} onChange={bodyChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -87,9 +88,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={eyes} onChange={eyesChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -102,9 +103,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={mouth} onChange={mouthChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -117,9 +118,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={head} onChange={headChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -132,9 +133,9 @@ export default function Categories(props: { background: any; body: any; eyes: an
                 </div>
                 <div>
                     <select value={hands} onChange={handsChange}>
-                        <option value="common">Common (0.01)</option>
-                        <option value="rare">Rare (0.02)</option>
-                        <option value="epic">Epic (0.03)</option>
+                        <option value="common">Common (0.02)</option>
+                        <option value="rare">Rare (0.04)</option>
+                        <option value="epic">Epic (0.06)</option>
                     </select>
                 </div>
             </div>
@@ -148,7 +149,7 @@ export default function Categories(props: { background: any; body: any; eyes: an
                     Generate Custom Art
                 </button>
                 <button>
-                    Est: {estimatedMintPrice} SOL
+                    Est:{estimatedMintPrice} SOL
                 </button>
             </div>
         </div>
